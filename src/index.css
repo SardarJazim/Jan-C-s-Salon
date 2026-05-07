@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-platinum: #FAF9F6;
+  --color-beige: #EAE0D5;
+  --color-gold-accent: #D2C4B5;
+  --color-charcoal: #333333;
+  --color-cream: #FAF9F6;
+  --color-ash: #EAE0D5;
+  --color-taupe: #D2C4B5;
+
+  --animate-fade-in: fade-in 0.6s ease-out;
+  --animate-slide-up: slide-up 0.8s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@layer base {
+  body {
+    @apply bg-platinum text-charcoal font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-md border border-white/40;
+}
+
+.luxury-text-gradient {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-charcoal via-gold-accent to-charcoal;
+}
+
+.card-hover-effect {
+  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-gold-accent/10;
+}
